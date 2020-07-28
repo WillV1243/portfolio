@@ -1,0 +1,94 @@
+<div class="portfolio container">
+
+  <div class="navbar"
+    (mouseenter)="navbar = true"
+    (mouseleave)="navbar = false">
+    <app-navbar
+      [active]="navbar"
+      (scroll)="scroll($event)">
+    </app-navbar>
+  </div>
+
+  <!-- Hero image -->
+  <section class="hero full-view" id="top" #top>
+
+    <div class="hero-inner">
+      <h1>Front End Web Developer</h1>
+      <h2>William Vandepeer</h2>
+      <app-hero-links></app-hero-links>
+    </div>
+
+  </section>
+
+  <section class="about full-view" id="about" #about>
+
+    <div class="about-inner">
+
+      <h2>About</h2>
+      <p>I am a front end web developer, with a focus in Angular.</p>
+      <p>
+        Coding is my job and passion. I'm in for the grind.<br/>
+        The slow and sometimes frustrating grind of improvement,<br/>
+        that brings so much satisfaction when it pays off.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="project" id="project1" #project1>
+
+    <div class="project-inner">
+
+      <div class="tilt-container">
+        <app-tilt-container
+          width="776px"
+          height="445px"
+          (mouseEnter)="hoverOverMessage = false">
+
+          <div class="tilt-content"
+            (mouseenter)="clickHereMessage = true"
+            (mouseleave)="clickHereMessage = false">
+
+            <img src="assets/img/worx_screenshot.png" routerLink="projects/worx">
+
+            <div class="tilt-content-message"
+              @fade
+              *ngIf="clickHereMessage">
+              <p>Click for more information</p>
+            </div>
+
+          </div>
+
+        </app-tilt-container>
+      </div>
+
+      <div class="project-description">
+
+        <p class="project-message"
+          @fade
+          *ngIf="hoverOverMessage">
+          Hover over the screenshot
+        </p>
+
+        <img src="assets/img/Leaf_worx.png">
+        <p>
+          Worx is a Business to Business application, providing a unique way of project managment.
+          My role in this project has been to produce modern and professional Web based portals for users to interact with Worx.
+          Producing 2 portals that provide data and actions that user can perform, for Clients and Suppliers.
+          These portals have been built using Angular and an API that was built by another Development team to connect with the Worx application.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="project full-view" id="project2" #project2>
+
+    It's pretty empty down here...
+
+  </section>
+
+</div>

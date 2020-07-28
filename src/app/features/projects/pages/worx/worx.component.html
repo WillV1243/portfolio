@@ -1,0 +1,173 @@
+<div class="worx container">
+
+  <!-- HEADER -->
+  <section class="section header">
+
+    <div class="back-container">
+      <a class="link"
+        routerLink="/"
+        (mouseenter)="back = true"
+        (mouseleave)="back = false">
+        <i class="fas fa-arrow-left icon"></i>
+        <p class="link-text"
+          @heroTextShowHide
+          *ngIf="back">
+          Back
+        </p>
+      </a>
+    </div>
+
+    <div class="logo-container">
+      <img class="logo" src="assets/img/Leaf_worx.png">
+    </div>
+
+    <div class="tech">
+      <div class="list">
+        <h2 class="list-item">Technology used</h2>
+        <p class="list-item">VSCode</p>
+        <p class="list-item">Git</p>
+        <p class="list-item">npm</p>
+        <p class="list-item">Figma</p>
+      </div>
+
+      <div class="list">
+        <h2 class="list-item">Libraries and frameworks used</h2>
+        <p class="list-item">Angular</p>
+        <p class="list-item">ngrx (redux)</p>
+        <p class="list-item">Angular Material</p>
+        <p class="list-item">Angular Gridster</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- DESIGN SECTION -->
+  <section class="section design">
+
+    <div class="text-container">
+
+      <h2 class="title">Design</h2>
+      <p class="description">
+        The design was produced using Material design as a guideline.
+        Angular Material components were used throughout the application to further align with Material Design.
+        <br><br>
+        Figma, an online UI prototyping tool, was used to create many iterations of UI layout until the final version was reached.
+        <br><br>
+        The colour scheme and logo are customizable through a custom theme system as well as Angular Materials built in theme system.
+      </p>
+
+    </div>
+
+    <div class="screenshot-container">
+
+      <img class="screenshot shot0" src="assets/img/worx_screenshot.png">
+      <img class="screenshot shot1" src="assets/img/worx_screenshot_1.png">
+      <img class="screenshot shot2" src="assets/img/worx_screenshot_2.png">
+
+    </div>
+
+  </section>
+
+  <section class="section dashboard">
+
+    <div class="screenshot-container">
+
+      <img class="screenshot shot3" src="assets/img/worx_screenshot_3.png">
+
+    </div>
+
+    <div class="text-container">
+
+      <h2 class="title">Dashboard</h2>
+      <p class="description">
+        The dashboard consists of user customizable Widgets. The widgets can be moved and resized using Drag and Drop, created with Angular Gridster.
+        Using ngrx/store to control application state as well ngrx/effects, the dashboard can be customized and saved to the backend.
+        <br><br>
+        This allows each user to have a unique dashboard, personal to them.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- WIZARD SECTION -->
+  <section class="section wizard">
+
+    <div class="text-container">
+
+      <h2 class="title">Create Request</h2>
+      <p class="description">
+        Custom made wizard style form with form progress to allow Clients to create requests.
+        <br><br>
+        Wizard function was created using ngrx.
+        Custom form inputs were made following Material design, including a multi-language-select and drag & drop file upload.
+        Custom validation was also created for file upload and many other user inputs throughout the Wizard.
+      </p>
+
+    </div>
+
+    <div class="screenshot-container">
+
+      <img class="screenshot shot4" src="assets/img/worx_screenshot_4.png">
+      <img class="screenshot shot5" src="assets/img/worx_screenshot_5.png">
+      <img class="screenshot shot6" src="assets/img/worx_screenshot_6.png">
+      <img class="screenshot shot7" src="assets/img/worx_screenshot_7.png">
+
+    </div>
+
+  </section>
+
+  <!-- WIDGETS SECTION -->
+  <section class="section widgets">
+
+    <div class="screenshot-container">
+    
+      <img class="screenshot shot8" src="assets/img/worx_screenshot_8.png">
+      <img class="screenshot shot9" src="assets/img/worx_screenshot_9.png">
+    
+    </div>
+
+    <div class="text-container">
+
+      <h2 class="title">Widgets</h2>
+      <p class="description">
+        Widgets consist of data tables, created using Material Table and customized CDK components.
+        <br><br>
+        Each Widget can be customized in many different ways.
+        Including filters for each column, filters for type of data, removing/adding and changing position of columns, widget name and default sorting.
+        These settings are all configured using a dialog then saved to the backend so that users can completely customize their dashboard.
+        <br><br>
+        Widgets are also capable of being maximized to fit the full screen and individually reloaded to refresh data.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- LOCALIZATION SECTION -->
+  <section class="section local">
+
+    <div class="text-container">
+
+      <h2 class="title">Localization</h2>
+      <p class="description">
+        The application contains dynamic localization.
+        <br><br>
+        The users language is detected automatically through the browser and can be switched at any during use. This was achieved with the library ngx-translate.
+        French, German and english are supported currently but new languages can be added with ease, using externalized JSON files.
+      </p>
+
+    </div>
+
+    <div class="screenshot-container">
+    
+      <img class="screenshot shot10" src="assets/img/worx_screenshot_10.png">
+      <img class="screenshot shot11" src="assets/img/worx_screenshot_11.png">
+    
+    </div>
+
+  </section>
+
+  <section class="section footer"></section>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="parent-container">
+
+  <div class="tilt-container"
+    #container
+    (mouseenter)="onMouseEnterHandler($event)"
+    (mouseleave)="onMouseLeaveHandler($event)"
+    (mousemove)="onMouseMoveHandler($event)">
+
+    <div class="tilt-inner"
+      #inner>
+
+      <ng-content></ng-content>
+    
+    </div>
+
+  </div>
+
+</div>
