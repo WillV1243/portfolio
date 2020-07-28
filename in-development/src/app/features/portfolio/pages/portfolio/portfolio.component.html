@@ -1,0 +1,23 @@
+<div class="portfolio container">
+
+  <div class="navbar"
+    (mouseenter)="navbar = true"
+    (mouseleave)="navbar = false">
+    <app-navbar
+      [active]="navbar"
+      (scroll)="scroll($event)">
+    </app-navbar>
+  </div>
+
+  <!-- Hero image -->
+  <section class="hero full-view" id="top" #top>
+
+    <div class="hero-inner">
+      <h1>Front End Web Developer</h1>
+      <h2>William Vandepeer</h2>
+      <app-hero-links></app-hero-links>
+    </div>
+
+  </section>
+
+</div>
