@@ -1,2 +1,2 @@
 export * from './fade';
-export * from './router';
+export * from './router-transition';
