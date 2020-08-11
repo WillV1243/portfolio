@@ -12,7 +12,8 @@ html, body {
 }
 body {
   font-family: 'Roboto Slab', serif;
-  color: rgb(54, 66, 63);
+  background-color: rgb(54, 54, 66);
+  color: rgb(237, 237, 245);
 }
 
 /* global classes */
