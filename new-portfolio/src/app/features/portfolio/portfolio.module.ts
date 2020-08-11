@@ -24,7 +24,7 @@ import { routeConfig } from './portfolio.routes';
     PortfolioComponent,
     LandingComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,
