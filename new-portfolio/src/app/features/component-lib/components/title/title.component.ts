@@ -12,7 +12,7 @@ import {
 @Component({
   selector: 'drk-title',
   templateUrl: './title.component.html',
-  styleUrls: ['./title.component.css'],
+  styleUrls: ['./title.component.css', '../../component-lib-style.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TitleComponent implements OnInit {
