@@ -5,30 +5,37 @@ import {
   ViewChild,
   ElementRef,
   ChangeDetectionStrategy,
-  Renderer2
+  OnInit
 } from '@angular/core';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
-  selector: 'app-title',
+  selector: 'drk-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TitleComponent {
+export class TitleComponent implements OnInit {
 
-  @ViewChild('title', {static: true}) private title: ElementRef;
+  @Input() public size: 'small' | 'medium' | 'large' | 'max' = 'medium';
 
-  @Input() public set size(value: 'small' | 'medium' | 'large' | 'max') {
-    // this.title.nativeElement.classList.add(`wv-${value}`);
-  };
+  @ViewChild('title', { static: true }) private title: ElementRef;
 
-  ngAfterContentInit() {
-    const nodes = this.title.nativeElement.childNodes;
+  ngOnInit() {
+    const title = this.title.nativeElement;
 
-    for (let node of nodes) {
-      if (node.nodeType !== Node.TEXT_NODE) {
-        throw 'Only text is supported as content in app-title';
+    title.className += this.inputErrorCheck(this.size) ? ` drk-${this.size}` : ' drk-medium';
+  }
+
+  // ERRORS CHECKS
+
+  // Throws error size input is does not match specified strings; true = no error
+  private inputErrorCheck(size: string) {
+    if (size && size.length === 0) {
+      if (this.size.search(/small|medium|large|max/i) === -1) {
+        return false;
+      } else {
+        return true;
       }
     }
   }
