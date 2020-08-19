@@ -1,0 +1,50 @@
+/* navbar container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 100vh;
+  padding: 2rem 0 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--background_light);
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.4);
+}
+
+/* logo */
+.nav-logo {
+  height: 100%;
+  width: 100%;
+}
+
+/* navbar items */
+.nav-btn {
+  height: 4rem;
+  width: 4rem;
+}
+.nav-link {
+  height: 100%;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.link-icon svg {
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem;
+  color: var(--color_dark);
+}
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  font-weight: 300;
+  color: var(--color_dark);
+}
+
+/* Utility */
+.flex-spacer {
+  flex-grow: 1;
+}

@@ -1,6 +1,18 @@
 /* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900;1,100;1,200;1,300;1,400;1,700;1,900&display=swap');
 
+:root {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  --background: rgb(31, 33, 38);
+  --background_light: rgb(46, 49, 56);
+  --background_dark: rgb(20, 21, 26);
+  --color: rgb(223, 227, 235);
+  --color_dark: rgb(156, 166, 183);
+  --color_secondary: rgb(143, 176, 225);
+  --animation_speed: 400ms;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,9 +25,9 @@ html, body {
   width: 100%;
 }
 body {
-  font-family: 'Roboto Slab', serif;
-  background-color: rgb(54, 54, 66);
-  color: rgb(237, 237, 245);
+  font-weight: 100;
+  background-color: var(--background);
+  color: var(--color);
 }
 
 /* global classes */
