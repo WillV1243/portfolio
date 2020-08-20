@@ -3,15 +3,34 @@ nav {
 }
 
 main {
-  width: calc(100% - 4rem);
-  margin-left: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3rem 1rem 1rem;
+  overflow: auto;
   z-index: 500;
 }
   main * {
-    width: 800px;
-    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    padding-bottom: 2rem;
   }
+
+/* Media queries */
+
+/* Small */
+@media only screen and (max-width: 600px) {
+  main {
+    width: 100%;
+    max-height: calc(100% - 4rem);
+  }
+}
+
+/* Large */
+@media only screen and (min-width: 600px) {
+  main {
+    width: calc(100% - 4rem);
+    max-height: 100%;
+    margin-left: 4rem;
+  }
+}

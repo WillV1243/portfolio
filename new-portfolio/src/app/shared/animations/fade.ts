@@ -10,13 +10,13 @@ export const fade =
       transition(
         ':enter', [
           style({ opacity: 0 }),
-          animate('200ms')
+          animate('400ms')
         ]
       ),
       transition(
         ':leave', [
           style({ opacity: 1 }),
-          animate('200ms', style({ opacity: 0 }))
+          animate('400ms', style({ opacity: 0 }))
         ]
       )
     ]

@@ -1,50 +1,97 @@
 /* navbar container */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 4rem;
-  height: 100vh;
-  padding: 2rem 0 6rem 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background: var(--background_light);
-  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.4);
+  transition: width var(--animation_time) ease;
+  overflow-x: hidden;
 }
+  .navbar:hover .nav-btn.logo {
+    background: rgba(255, 255, 255, 0.1);
+  }
 
 /* logo */
 .nav-logo {
   height: 100%;
-  width: 100%;
+  width: 4rem;
 }
 
 /* navbar items */
 .nav-btn {
   height: 4rem;
-  width: 4rem;
+  transition: all var(--animation_time) ease;
 }
 .nav-link {
   height: 100%;
-  width: 4rem;
   display: flex;
   align-items: center;
   justify-items: center;
-}
-.link-icon svg {
-  width: 2rem;
-  height: 2rem;
-  margin: 1rem;
   color: var(--color_dark);
+  transition: background var(--animation_time) ease, color 50ms ease;
+  user-select: none;
+  -ms-user-select: none;
 }
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color_secondary);
+    cursor: pointer;
+  }
+  .nav-link:active {
+    color: var(--color_active);
+  }
+.link-icon {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+}
+  .link-icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
 .link-text {
   display: none;
   margin-left: 1rem;
-  font-weight: 300;
-  color: var(--color_dark);
+  font-weight: 500;
 }
 
 /* Utility */
 .flex-spacer {
   flex-grow: 1;
+}
+
+/* Media queries */
+
+/* Small */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 4rem;
+    padding: 0;
+    flex-direction: row;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+/* Large */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 4rem;
+    height: 100vh;
+    padding: 2rem 0 6rem 0;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .navbar:hover {
+    width: 12rem;
+  }
+  .navbar:hover .link-text {
+    display: block;
+  }
 }
