@@ -6,20 +6,23 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 1rem 1rem;
   overflow: auto;
   z-index: 500;
 }
   main * {
     width: 100%;
-    max-width: 800px;
-    padding-bottom: 2rem;
   }
+
+.example-text, .example-text * {
+  width: 100%;
+  max-width: 800px;
+  padding-bottom: 2rem;
+}
 
 /* Media queries */
 
 /* Small */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   main {
     width: 100%;
     max-height: calc(100% - 4rem);
@@ -27,8 +30,9 @@ main {
 }
 
 /* Large */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   main {
+    height: 100%;
     width: calc(100% - 4rem);
     max-height: 100%;
     margin-left: 4rem;

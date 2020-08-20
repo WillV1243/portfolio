@@ -10,6 +10,7 @@
   --color: rgb(223, 227, 235);
   --color_dark: rgb(156, 166, 183);
   --color_secondary: rgb(143, 176, 225);
+  --color_tertiary: rgb(143, 225, 177);
   --color_active: rgb(255, 255, 255);
   --animation_time: 300ms;
 }
