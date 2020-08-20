@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 
 // animations
 import { fade } from 'src/app/shared/animations';
+
+// version
+// version
+import { version } from '../../../../../../package.json';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
@@ -12,6 +16,8 @@ import { fade } from 'src/app/shared/animations';
   animations: [fade]
 })
 export class NavbarComponent implements OnInit {
+
+  version: string = version;
 
   constructor() { }
 
