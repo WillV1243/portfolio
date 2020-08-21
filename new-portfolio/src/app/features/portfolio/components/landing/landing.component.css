@@ -1,24 +1,6 @@
 /* landing */
 .landing {
   width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(3deg, var(--background) 20%, var(--background_dark) 20%, var(--background_dark) 20%, transparent 50%),
-    linear-gradient(15deg, var(--background) 70%, transparent 70%),
-    linear-gradient(22deg, var(--background_dark) 77%, transparent 77%),
-    linear-gradient(32deg, transparent 92%, var(--background_dark) 92%),
-    linear-gradient(26deg, transparent 85%, var(--background) 85%),
-    url('/assets/img/hero.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-/* landing content */
-.landing-content {
-  width: 100%;
   max-width: 992px;
   display: flex;
   flex-direction: column;
@@ -30,12 +12,15 @@
 .title {
   font-weight: 100;
 }
+  .title.large {
+    color: var(--color_dark);
+  }
 
 /* Media queries */
 
 /* Small */
 @media only screen and (max-width: 700px) {
-  .landing-content {
+  .landing {
     padding: 0 0.5rem;
   }
 
@@ -44,13 +29,12 @@
   }
   .title.large {
     font-size: 3rem;
-    color: var(--color_dark);
   }
 }
 
 /* Large */
 @media only screen and (min-width: 700px) {
-  .landing-content {
+  .landing {
     padding: 0 1rem;
   }
 
@@ -59,6 +43,5 @@
   }
   .title.large {
     font-size: 4rem;
-    color: var(--color_dark);
   }
 }

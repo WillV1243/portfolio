@@ -32,6 +32,20 @@ body {
   color: var(--color);
 }
 
+/* scrollbar (chrome thing!) */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--background_light);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 /* global classes */
 .container {
   width: 100%;
