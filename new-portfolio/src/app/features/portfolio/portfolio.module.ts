@@ -7,7 +7,7 @@ import { CoreModule } from '../../core/core.module'
 import { SharedModule } from '../../shared/shared.module';
 
 // components
-import { LandingComponent, ProjectComponent } from './components';
+import { LandingComponent, ProjectComponent, TechnologyLinkComponent } from './components';
 
 // pages
 import { PortfolioComponent } from './pages';
@@ -26,6 +26,7 @@ import { routeConfig } from './portfolio.routes';
     HeaderComponent,
     FooterComponent,
     ProjectComponent,
+    TechnologyLinkComponent,
   ],
   imports: [
     CommonModule,
