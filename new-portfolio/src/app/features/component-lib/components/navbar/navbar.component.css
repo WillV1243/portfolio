@@ -27,6 +27,11 @@
   height: 4rem;
   transition: all var(--animation_time) ease;
 }
+a {
+  user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+}
 .nav-link {
   height: 100%;
   display: flex;
@@ -34,13 +39,10 @@
   justify-items: center;
   color: var(--color_dark);
   transition: background var(--animation_time) ease, color 50ms ease;
-  user-select: none;
-  -ms-user-select: none;
 }
   .nav-link:hover {
     background: rgba(255, 255, 255, 0.1);
     color: var(--color_secondary);
-    cursor: pointer;
   }
   .nav-link:active {
     color: var(--color_active);
@@ -58,6 +60,8 @@
   display: none;
   margin-left: 1rem;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* version */
@@ -75,6 +79,8 @@
   font-size: 0.8rem;
   font-weight: 300;
   color: var(--color_dark);
+  user-select: none;
+  -ms-user-select: none;
 }
 
 /* Utility */

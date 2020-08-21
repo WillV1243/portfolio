@@ -1,13 +1,15 @@
 <div class="navbar">
 
   <div class="nav-logo">
-    <img class="logo" src="assets/img/logo_white.png">
+    <a class="logo-link" (click)="scrollTo('top')">
+      <img class="logo" src="assets/img/logo_white.png">
+    </a>
   </div>
 
   <div class="flex-spacer"></div>
 
   <div class="nav-btn">
-    <a class="nav-link">
+    <a class="nav-link" (click)="scrollTo('projects')">
       <div class="link-icon">
         <svg aria-hidden="true"
           focusable="false"
@@ -27,7 +29,7 @@
   </div>
 
   <div class="nav-btn">
-    <a class="nav-link">
+    <a class="nav-link" (click)="scrollTo('skills')">
       <div class="link-icon">
         <svg aria-hidden="true"
           focusable="false"
@@ -48,7 +50,7 @@
   </div>
 
   <div class="nav-btn">
-    <a class="nav-link">
+    <a class="nav-link" (click)="scrollTo('about')">
       <div class="link-icon">
         <svg aria-hidden="true"
           focusable="false"
