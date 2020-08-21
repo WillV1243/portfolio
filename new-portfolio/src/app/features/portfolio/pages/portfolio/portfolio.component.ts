@@ -10,27 +10,26 @@ import { LandingComponent } from '../../components';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css']
 })
-export class PortfolioComponent implements OnInit, AfterViewInit {
+export class PortfolioComponent implements AfterViewInit {
 
-  @ViewChild('top') top: LandingComponent;
-  @ViewChild('projects') projects: ElementRef;
+  @ViewChild('top') private top: LandingComponent;
+  @ViewChild('projects') private projects: ElementRef;
+  @ViewChild('skills') private skills: ElementRef;
+  @ViewChild('about') private about: ElementRef;
 
   private elements: any = { };
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   ngAfterViewInit() {
     this.elements = {
       top: this.top,
-      projects: this.projects
+      projects: this.projects,
+      skills: this.skills,
+      about: this.about
     }
   }
 
+  // smoothly scrolls to element on page
   public scroll(el: string): void {
-    console.log(this.elements[el]);
     this.elements[el].nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 

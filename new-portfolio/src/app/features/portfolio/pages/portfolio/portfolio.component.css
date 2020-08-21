@@ -7,19 +7,10 @@ main {
   flex-direction: column;
   align-items: center;
   overflow: auto;
-  z-index: 500;
+  z-index: 0;
 }
   main * {
     width: 100%;
-  }
-
-.example-text {
-  height: 100vh;
-}
-  .example-text, .example-text * {
-    width: 100%;
-    max-width: 800px;
-    padding-bottom: 2rem;
   }
 
 /* Media queries */
