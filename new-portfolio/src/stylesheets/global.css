@@ -31,6 +31,11 @@ body {
   background-color: var(--background);
   color: var(--color);
 }
+a {
+  user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+}
 
 /* scrollbar (chrome thing!) */
 ::-webkit-scrollbar {

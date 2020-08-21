@@ -54,7 +54,7 @@ section {
 /* Media queries */
 
 /* Small */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   main {
     width: 100%;
     max-height: calc(100% - 4rem);
@@ -62,7 +62,7 @@ section {
 }
 
 /* Large */
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
   main {
     height: 100%;
     width: calc(100% - 4rem);

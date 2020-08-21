@@ -38,7 +38,7 @@ a {
   align-items: center;
   justify-items: center;
   color: var(--color_dark);
-  transition: background var(--animation_time) ease, color 50ms ease;
+  transition: all var(--animation_time) ease;
 }
   .nav-link:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -91,7 +91,7 @@ a {
 /* Media queries */
 
 /* Small */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   .navbar {
     bottom: 0;
     width: 100vw;
@@ -115,7 +115,7 @@ a {
 }
 
 /* Large */
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
   .navbar {
     top: 0;
     width: 4rem;
