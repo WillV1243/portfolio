@@ -8,7 +8,7 @@ main {
 }
 section {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +54,7 @@ section {
 /* Media queries */
 
 /* Small */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 688px) {
   main {
     width: 100%;
     max-height: calc(100% - 4rem);
@@ -62,7 +62,7 @@ section {
 }
 
 /* Large */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 688px) {
   main {
     height: 100%;
     width: calc(100% - 4rem);

@@ -1,0 +1,27 @@
+/* technologies */
+.tech-icon-container {
+  margin-right: 1rem;
+}
+.tech-icon-link {
+  padding-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  transition: all var(--animation_time) ease;
+  color: var(--color);
+  text-decoration: none;
+}
+  .tech-icon-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color_secondary);
+  }
+  .tech-icon-link:active {
+    color: var(--color_active);
+  }
+.tech-icon {
+  width: 2rem;
+  height: 2rem;
+}
+.tech-text {
+  margin-left: 0.5rem;
+}

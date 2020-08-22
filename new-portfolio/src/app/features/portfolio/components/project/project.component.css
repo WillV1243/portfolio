@@ -1,7 +1,6 @@
 /* project */
 .project {
   max-width: 992px;
-  max-height: calc(100vh - 3rem);
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 4px 8px 32px rgba(0, 0, 0, 0.8);
 }
@@ -16,46 +15,14 @@
   color: var(--color);
 }
 
-/* technologies */
-.technologies-container {
-  display: flex;
-  align-items: center;
-}
-.tech-icon-container {
-  margin-right: 1rem;
-}
-.tech-icon-link {
-  padding-right: 0.5rem;
-  display: flex;
-  align-items: center;
-  font-weight: 300;
-  transition: all var(--animation_time) ease;
-}
-  .tech-icon-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--color_secondary);
-  }
-  .tech-icon-link:active {
-    color: var(--color_active);
-  }
-.tech-icon {
-  width: 2rem;
-  height: 2rem;
-}
-.tech-text {
-  margin-left: 0.5rem;
-}
-
 /* description */
 .description-container {
   padding-right: 1rem;
 }
-.description {
+::ng-deep .description-container p {
   text-align: justify;
+  margin-bottom: 1rem;
 }
-  .description + .description {
-    margin-top: 1rem;
-  }
 
 /* project image */
 .project-img {
@@ -63,21 +30,27 @@
   max-width: 600px;
 }
 
+/* technologies */
+.technologies-container {
+  display: flex;
+  align-items: center;
+}
+
 /* Media queries */
 
 /* Small */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 688px) {
   .project {
     position: relative;
-    height: calc(100% - 1rem);
     width: calc(100% - 1rem);
     margin: 0.5rem;
     padding: 0.5rem;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 5rem auto;
+    grid-template-rows: 5rem auto auto;
     grid-template-areas:
       "header"
+      "desc"
       "img";
   }
 
@@ -86,20 +59,15 @@
   }
 
   .description-container {
-    position: absolute;
-    width: calc(100% - 1rem);
-    height: calc(100% - 6rem);
-    padding: 0.5rem;
-    top: 5.5rem;
-    left: 0.5rem;
-    background: rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
   }
 }
 
 /* Large */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 688px) {
   .project {
     width: 100%;
+    max-height: calc(100vh - 3rem);
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;

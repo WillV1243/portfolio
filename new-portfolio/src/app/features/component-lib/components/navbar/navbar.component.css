@@ -91,7 +91,7 @@ a {
 /* Media queries */
 
 /* Small */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 688px) {
   .navbar {
     bottom: 0;
     width: 100vw;
@@ -111,7 +111,7 @@ a {
 }
 
 /* Large */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 688px) {
   .navbar {
     top: 0;
     width: 4rem;

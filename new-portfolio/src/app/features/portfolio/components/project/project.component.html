@@ -1,53 +1,23 @@
 <div class="project">
 
   <div class="header-container">
-    <h3 class="title medium">LTC Worx</h3>
+    <h3 class="title medium">{{ title }}</h3>
 
     <div class="technologies-container">
 
-      <div class="tech-icon-container">
-        <a class="tech-icon-link">
-          <img class="tech-icon" src="assets/img/angular_logo.png">
-          <p class="tech-text">Angular</p>
-        </a>
-      </div>
-
-      <div class="tech-icon-container">
-        <a class="tech-icon-link">
-          <img class="tech-icon" src="assets/img/material_logo.png">
-          <p class="tech-text">Material</p>
-        </a>
-      </div>
-
-      <div class="tech-icon-container">
-        <a class="tech-icon-link">
-          <img class="tech-icon" src="assets/img/ngrx_logo.svg">
-          <p class="tech-text">Redux</p>
-        </a>
-      </div>
+      <app-technology-link *ngFor="let tech of technologies"
+        [technologyName]="tech">
+      </app-technology-link>
 
     </div>
   </div>
 
   <div class="description-container">
-    <p class="description">
-      Worx is a Business to Business <b>Project managment application</b>, providing a unique way of managing workflows in a variety of scenarios.
-      My role in this project has been to produce modern and professional Web based portals for users to interact with Worx.
-    </p>
-    <p class="description">
-      Producing 2 portals that provide data and actions that user can perform, for Clients and Suppliers.
-      These portals have been built using <b>Angular</b> and an API that was built by another Development team to connect with the Worx application.
-    </p>
-    <p class="description">
-      Developement on Worx as allowed me to work with a <b>large professional team</b> of front-end developers, back-end developers, application developers and QA.
-    </p>
-    <p class="description">
-      The Worx portals are still <b>in-developement</b>.
-    </p>
+    <ng-content></ng-content>
   </div>
 
   <div class="img-container">
-    <img class="project-img" src="assets/img/worx_screenshot.png">
+    <img class="project-img" [src]="imagePath">
   </div>
 
 </div>

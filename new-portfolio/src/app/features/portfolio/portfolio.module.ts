@@ -7,7 +7,11 @@ import { CoreModule } from '../../core/core.module'
 import { SharedModule } from '../../shared/shared.module';
 
 // components
-import { LandingComponent, ProjectComponent, TechnologyLinkComponent } from './components';
+import {
+  LandingComponent,
+  ProjectComponent,
+  TechnologyLinkComponent
+} from './components';
 
 // pages
 import { PortfolioComponent } from './pages';
