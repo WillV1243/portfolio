@@ -9,7 +9,6 @@
   font-weight: 300;
   transition: all var(--animation_time) ease;
   color: var(--color);
-  text-decoration: none;
 }
   .tech-icon-link:hover {
     background: rgba(255, 255, 255, 0.1);

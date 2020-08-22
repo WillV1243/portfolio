@@ -35,6 +35,7 @@ a {
   user-select: none;
   -ms-user-select: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 /* scrollbar (chrome thing!) */

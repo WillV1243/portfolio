@@ -11,6 +11,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 export class ProjectComponent {
 
   @Input() title: string;
+  @Input() projectUrl: string;
   @Input() technologies: string[];
   @Input() imagePath: string;
 
