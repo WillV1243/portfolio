@@ -21,7 +21,6 @@
   transition: all var(--animation_time) ease;
 }
   .project-link:hover {
-    background: rgba(255, 255, 255, 0.1);
     color: var(--color_secondary);
   }
   .project-link:active {

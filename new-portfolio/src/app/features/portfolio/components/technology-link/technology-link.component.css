@@ -11,15 +11,19 @@
   color: var(--color);
 }
   .tech-icon-link:hover {
-    background: rgba(255, 255, 255, 0.1);
     color: var(--color_secondary);
   }
+    .tech-icon-link:hover .tech-icon {
+      filter: grayscale(0%);
+    }
   .tech-icon-link:active {
     color: var(--color_active);
   }
 .tech-icon {
   width: 2rem;
   height: 2rem;
+  filter: grayscale(90%);
+  transition: all var(--animation_time) ease;
 }
 .tech-text {
   margin-left: 0.5rem;
