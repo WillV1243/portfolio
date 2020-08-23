@@ -6,7 +6,7 @@
   padding-right: 0.5rem;
   display: flex;
   align-items: center;
-  font-weight: 300;
+  font-weight: 100;
   transition: all var(--animation_time) ease;
   color: var(--color);
 }

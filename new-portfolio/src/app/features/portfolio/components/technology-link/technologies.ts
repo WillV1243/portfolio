@@ -20,11 +20,6 @@ export const technologies: { [key: string]: Technology } = {
     imagePath: 'assets/img/techs/ngrx_logo.svg',
     label: 'Redux'
   },
-  npm: {
-    url: 'https://www.npmjs.com/',
-    imagePath: 'assets/img/techs/npm_logo.png',
-    label: 'npm'
-  },
   wordpress: {
     url: 'https://wordpress.com/',
     imagePath: 'assets/img/techs/wordpress_logo.png',

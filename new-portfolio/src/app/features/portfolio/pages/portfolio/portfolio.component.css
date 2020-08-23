@@ -8,7 +8,6 @@ main {
 }
 section {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,6 +61,10 @@ section {
     max-height: calc(100% - 4rem);
   }
 
+  section {
+    min-height: calc(100vh - 4rem);
+  }
+
   .projects-container {
     padding-top: 1rem;
   }
@@ -77,6 +80,10 @@ section {
     width: calc(100% - 4rem);
     max-height: 100%;
     margin-left: 4rem;
+  }
+
+  section {
+    min-height: 100vh;
   }
 
   .projects-container {
