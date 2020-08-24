@@ -21,6 +21,7 @@ import { HeaderComponent, FooterComponent } from './layout';
 
 // routes
 import { routeConfig } from './portfolio.routes';
+import { SkillsComponent } from './components/skills/skills.component';
 /* --------------------------------------------------------------------------------- */
 
 @NgModule({
@@ -31,6 +32,7 @@ import { routeConfig } from './portfolio.routes';
     FooterComponent,
     ProjectComponent,
     TechnologyLinkComponent,
+    SkillsComponent,
   ],
   imports: [
     CommonModule,
