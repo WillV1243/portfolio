@@ -9,6 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
+  public languages: string[] = [
+    'angular',
+    'react',
+    'typescript',
+    'node'
+  ];
+
+  public libraries: string[] = [
+    'material',
+    'redux',
+    'i18n'
+  ];
+
+  public technologies: string[] = [
+    'git',
+    'npm',
+    'jira',
+    'figma',
+    'wordpress',
+    'elementor'
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

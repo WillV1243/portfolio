@@ -7,10 +7,19 @@
   align-items: flex-start;
   justify-content: center;
 }
+  .skills * + .skills * {
+    margin-top: 2rem;
+  }
 
 /* titles */
 .title {
   font-weight: 100;
+}
+
+/* technologies */
+.technologies-container {
+  display: flex;
+  align-items: center;
 }
 
 
