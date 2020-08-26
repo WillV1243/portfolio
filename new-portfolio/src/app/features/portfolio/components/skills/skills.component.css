@@ -13,15 +13,27 @@
 
 /* titles */
 .title {
+  margin-top: 2rem;
   font-weight: 100;
 }
+  .title:first-of-type {
+    margin: 0;
+  }
+  .title.medium {
+    font-size: 2rem;
+  }
 
 /* technologies */
 .technologies-container {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
-
+.technology {
+  min-width: 120px;
+  margin-top: 0.5rem;
+}
 
 /* Media queries */
 
@@ -31,9 +43,10 @@
     padding: 0 0.5rem;
   }
 
-  .title.medium {
-    font-size: 2rem;
+  .title.large {
+    font-size: 3rem;
   }
+
 }
 
 /* Large */
@@ -42,7 +55,8 @@
     padding: 0 1rem;
   }
 
-  .title.medium {
-    font-size: 2rem;
+  .title.large {
+    font-size: 4rem;
   }
+
 }
