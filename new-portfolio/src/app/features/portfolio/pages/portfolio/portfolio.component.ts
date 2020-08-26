@@ -1,8 +1,11 @@
 // angular
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 // components
 import { LandingComponent } from '../../components';
+
+// services
+import { LoaderService } from 'src/app/shared/services';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
@@ -19,6 +22,8 @@ export class PortfolioComponent implements AfterViewInit {
 
   private elements: any = { };
 
+  constructor(private loader: LoaderService) { }
+
   ngAfterViewInit() {
     this.elements = {
       top: this.top,
@@ -26,6 +31,8 @@ export class PortfolioComponent implements AfterViewInit {
       skills: this.skills,
       about: this.about
     }
+
+    this.loader.hideOnImageLoad();
   }
 
   // smoothly scrolls to element on page

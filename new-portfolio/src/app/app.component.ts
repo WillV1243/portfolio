@@ -1,5 +1,5 @@
 // angular
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 // animations
