@@ -6,6 +6,7 @@
   background: var(--background_light);
   transition: width var(--animation_time) ease;
   overflow: hidden;
+  z-index: 1000;
 }
 
 /* logo */
