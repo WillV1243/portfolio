@@ -1,10 +1,9 @@
 // angular
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 // animations
 import { fade } from 'src/app/shared/animations';
 
-// version
 // version
 import { version } from '../../../../../../package.json';
 /* --------------------------------------------------------------------------------- */
@@ -15,16 +14,11 @@ import { version } from '../../../../../../package.json';
   styleUrls: ['./navbar.component.css'],
   animations: [fade]
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   @Output() scroll = new EventEmitter<string>();
 
   version: string = version;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   scrollTo(el: string) {
     this.scroll.emit(el);

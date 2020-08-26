@@ -18,9 +18,6 @@ import {
 // pages
 import { PortfolioComponent } from './pages';
 
-// layout
-import { HeaderComponent, FooterComponent } from './layout';
-
 // routes
 import { routeConfig } from './portfolio.routes';
 /* --------------------------------------------------------------------------------- */
@@ -29,8 +26,6 @@ import { routeConfig } from './portfolio.routes';
   declarations: [
     PortfolioComponent,
     LandingComponent,
-    HeaderComponent,
-    FooterComponent,
     ProjectComponent,
     TechnologyLinkComponent,
     SkillsComponent,
