@@ -10,6 +10,8 @@ import { SharedModule } from '../../shared/shared.module';
 import {
   LandingComponent,
   ProjectComponent,
+  SkillsComponent,
+  AboutComponent,
   TechnologyLinkComponent
 } from './components';
 
@@ -21,7 +23,6 @@ import { HeaderComponent, FooterComponent } from './layout';
 
 // routes
 import { routeConfig } from './portfolio.routes';
-import { SkillsComponent } from './components/skills/skills.component';
 /* --------------------------------------------------------------------------------- */
 
 @NgModule({
@@ -33,6 +34,7 @@ import { SkillsComponent } from './components/skills/skills.component';
     ProjectComponent,
     TechnologyLinkComponent,
     SkillsComponent,
+    AboutComponent,
   ],
   imports: [
     CommonModule,

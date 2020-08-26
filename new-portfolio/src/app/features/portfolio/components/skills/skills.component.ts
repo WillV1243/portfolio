@@ -1,5 +1,5 @@
 // angular
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent {
 
   public languages: string[] = [
     'angular',
@@ -30,10 +30,5 @@ export class SkillsComponent implements OnInit {
     'wordpress',
     'elementor'
   ];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

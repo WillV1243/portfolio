@@ -1,0 +1,40 @@
+/* landing */
+.about {
+  width: 100%;
+  max-width: 992px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* titles */
+.title {
+  font-weight: 100;
+}
+
+
+/* Media queries */
+
+/* Small */
+@media only screen and (max-width: 688px) {
+  .landing {
+    padding: 0 0.5rem;
+  }
+
+  .title.large {
+    font-size: 3rem;
+  }
+}
+
+/* Large */
+@media only screen and (min-width: 688px) {
+  .landing {
+    padding: 0 1rem;
+  }
+
+  .title.large {
+    font-size: 4rem;
+  }
+
+}
