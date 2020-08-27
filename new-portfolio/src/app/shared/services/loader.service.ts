@@ -32,6 +32,6 @@ export class LoaderService {
     setTimeout(() => {
       let loader = this.renderer.selectRootElement('#loader');
       this.renderer.addClass(loader, 'hidden');
-    }, 1000);
+    }, 100);
   }
 }
