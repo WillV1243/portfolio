@@ -1,0 +1,64 @@
+<form class="form"
+  [formGroup]="contactForm"
+  (ngSubmit)="submitContactForm(contactForm.value)">
+
+  <div class="input-container">
+    <label class="label" for="name">Name</label>
+    <input class="input"
+      id="name"
+      type="text"
+      [formControl]="name"/>
+    <div class="error-container">
+      <p class="error" *ngIf="name.errors?.required && (name.touched || name.dirty)" @fade>
+        Please enter your name
+      </p>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <label class="label" for="company">Company Name</label>
+    <input class="input"
+      id="company"
+      type="text"
+      [formControl]="company"/>
+    <div class="error-container">
+      <p class="error" *ngIf="company.errors?.required && (company.touched || company.dirty)" @fade>
+        Please enter your company name
+      </p>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <label class="label" for="email">Email</label>
+    <input class="input"
+      id="email"
+      type="email"
+      [formControl]="email"/>
+    <div class="error-container">
+      <p class="error" *ngIf="email.errors?.required && (email.touched || email.dirty)" @fade>
+        Please enter your email
+      </p>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <label class="label" for="message">Message</label>
+    <textarea class="textarea"
+      id="message"
+      [formControl]="message">
+    </textarea>
+    <div class="error-container">
+      <p class="error" *ngIf="message.errors?.required && (message.touched || message.dirty)" @fade>
+        Please enter your message
+      </p>
+      <p class="error" *ngIf="message.errors?.maxlength && (message.touched || message.dirty)" @fade>
+        Your message cannot be longer than 400 characters
+      </p>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <button class="submit" type="submit" [disabled]="contactForm.invalid">Send Message</button>
+  </div>
+
+</form>

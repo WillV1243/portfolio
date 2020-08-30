@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // modules
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// features
 import { ComponentLibModule } from '../features/component-lib/component-lib.module';
 /* --------------------------------------------------------------------------------- */
 
@@ -10,10 +13,14 @@ import { ComponentLibModule } from '../features/component-lib/component-lib.modu
   declarations: [],
   imports: [
     CommonModule,
-    ComponentLibModule
+    ComponentLibModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
-    ComponentLibModule
+    ComponentLibModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

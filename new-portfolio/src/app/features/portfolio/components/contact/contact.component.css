@@ -13,11 +13,16 @@
   font-weight: 100;
 }
 
+.form-container {
+  width: 100%;
+}
+
 /* Media queries */
 
 /* Small */
 @media only screen and (max-width: 688px) {
   .contact {
+    width: 100%;
     padding: 0 0.5rem;
   }
 

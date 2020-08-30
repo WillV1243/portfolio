@@ -21,6 +21,7 @@ import { PortfolioComponent } from './pages';
 
 // routes
 import { routeConfig } from './portfolio.routes';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 /* --------------------------------------------------------------------------------- */
 
 @NgModule({
@@ -31,7 +32,8 @@ import { routeConfig } from './portfolio.routes';
     TechnologyLinkComponent,
     SkillsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ContactFormComponent
   ],
   imports: [
     CommonModule,
