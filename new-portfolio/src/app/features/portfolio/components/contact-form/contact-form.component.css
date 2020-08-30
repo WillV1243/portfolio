@@ -25,31 +25,35 @@ input, textarea, button {
   width: 100%;
   padding: 0.5rem;
 }
+  .input:focus  {
+    border: none;
+  }
 .textarea {
   width: 100%;
   height: 16rem;
   padding: 0.5rem;
   resize: none;
 }
+  .textarea:focus {
+    border: none;
+  }
 
 /* button */
 .submit {
   width: 100%;
   padding: 0.5rem;
-  transition: color var(--animation_time) ease;
+  transition: all var(--animation_time) ease;
   cursor: pointer;
 }
   .submit:hover {
     color: var(--color_secondary);
-    font-weight: 300;
   }
   .submit:active {
     color: var(--color_active);
-    font-weight: 300;
   }
   .submit:disabled, .submit:disabled:hover, .submit:disabled:active {
+    background: rgba(255, 255, 255, 0.05);
     color: var(--color_dark);
-    font-weight: 300;
     cursor: default;
   }
 

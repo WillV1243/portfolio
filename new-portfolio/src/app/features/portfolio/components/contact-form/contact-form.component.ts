@@ -41,8 +41,6 @@ export class ContactFormComponent implements OnInit {
 
   submitContactForm(formValue: any) {
     console.log({ formValue });
-
-    this.contactFormService.postContactForm(formValue).subscribe();
   }
 
 }

@@ -12,19 +12,4 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class ContactFormService {
 
-  private apiUrl = 'https://mailthis.to/';
-
-  constructor(private http: HttpClient) { }
-
-  postContactForm(formValue: any): Observable<any> {
-    return this.http.post(this.apiUrl, formValue, { responseType: 'text' }).pipe(
-      map(res => {
-        return res ? res : null;
-      }),
-      catchError(error => {
-        return throwError(error);
-        // put error handling here!!
-      })
-    )
-  }
 }
