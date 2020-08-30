@@ -3,14 +3,13 @@ import { transition, trigger, style, query, animate } from '@angular/animations'
 // --------------------------------------------------------------- //
 
 export const routerTransition =
-  trigger('routerTransition', [
+  trigger('routeTransition', [
     transition('* <=> *', [
       query(
         ':enter, :leave',
         [style({
           position: 'absolute',
           left: 0,
-          top: 0,
           width: '100%',
           height: '100%',
           opacity: 0,
@@ -34,3 +33,4 @@ export const routerTransition =
       )
     ])
   ]);
+

@@ -5,7 +5,7 @@ import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { LandingComponent } from '../../components';
 
 // services
-import { LoaderService } from 'src/app/shared/services';
+import { LoaderService } from 'src/app/core/services';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
