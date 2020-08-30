@@ -8,7 +8,6 @@
   align-items: center;
   font-weight: 100;
   transition: all var(--animation_time) ease;
-  color: var(--color);
 }
   .tech-icon-link:hover {
     color: var(--color_secondary);

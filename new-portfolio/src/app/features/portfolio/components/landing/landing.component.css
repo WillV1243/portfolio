@@ -23,7 +23,6 @@
   align-items: center;
   font-weight: 100;
   transition: all var(--animation_time) ease;
-  color: var(--color);
 }
   .link:hover {
     color: var(--color_secondary);

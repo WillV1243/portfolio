@@ -28,11 +28,6 @@
   height: 4rem;
   transition: all var(--animation_time) ease;
 }
-a {
-  user-select: none;
-  -ms-user-select: none;
-  cursor: pointer;
-}
 .nav-link {
   height: 100%;
   display: flex;
