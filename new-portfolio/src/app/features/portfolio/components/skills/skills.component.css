@@ -46,7 +46,6 @@
   .title.large {
     font-size: 3rem;
   }
-
 }
 
 /* Large */
@@ -58,5 +57,12 @@
   .title.large {
     font-size: 4rem;
   }
+}
 
+
+/* larger */
+@media only screen and (min-width: calc(992px + 3rem)) {
+  .skills {
+    min-width: 992px;
+  }
 }

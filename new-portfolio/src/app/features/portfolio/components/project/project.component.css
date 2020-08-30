@@ -93,3 +93,10 @@
     font-size: 3rem;
   }
 }
+
+/* larger */
+@media only screen and (min-width: calc(992px + 3rem)) {
+  .project {
+    min-width: 992px;
+  }
+}
