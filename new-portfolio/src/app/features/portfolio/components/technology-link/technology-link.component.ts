@@ -2,7 +2,7 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
 // models
-import { technologies } from './technologies';
+import { technologyData } from '../../models';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
@@ -20,7 +20,7 @@ export class TechnologyLinkComponent implements OnInit {
   public label: string;
 
   ngOnInit() {
-    const { url, imagePath, label } = technologies[this.technologyName];
+    const { url, imagePath, label } = technologyData[this.technologyName];
 
     this.url = url;
     this.imagePath = imagePath;

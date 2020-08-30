@@ -23,12 +23,12 @@ export const routerTransition =
       ),
       query(
         ':leave',
-        [style({ opacity: 1 }), animate('0.4s', style({ opacity: 0 }))],
+        [style({ opacity: 1 }), animate('0.8s', style({ opacity: 0 }))],
         { optional: true }
       ),
       query(
         ':enter',
-        [style({ opacity: 0 }), animate('0.4s', style({ opacity: 1 }))],
+        [style({ opacity: 0 }), animate('0.8s', style({ opacity: 1 }))],
         { optional: true }
       )
     ])

@@ -1,34 +1,20 @@
 // angular
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+// models
+import { languages, libraries, technologies } from '../../models';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  styleUrls: ['./skills.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent {
 
-  public languages: string[] = [
-    'angular',
-    'react',
-    'typescript',
-    'node'
-  ];
-
-  public libraries: string[] = [
-    'material',
-    'redux',
-    'i18n'
-  ];
-
-  public technologies: string[] = [
-    'git',
-    'npm',
-    'jira',
-    'figma',
-    'wordpress',
-    'elementor'
-  ];
+  public languages: string[] = languages;
+  public libraries: string[] = libraries;
+  public technologies: string[] = technologies;
 
 }

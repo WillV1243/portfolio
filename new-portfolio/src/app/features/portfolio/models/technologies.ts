@@ -4,7 +4,7 @@ export interface Technology {
   label: string;
 }
 
-export const technologies: { [key: string]: Technology } = {
+export const technologyData: { [key: string]: Technology } = {
   material: {
     url: 'https://material.angular.io/',
     imagePath: 'assets/img/techs/material_logo.png',
