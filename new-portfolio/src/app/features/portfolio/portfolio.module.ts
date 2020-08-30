@@ -12,6 +12,7 @@ import {
   ProjectComponent,
   SkillsComponent,
   AboutComponent,
+  ContactComponent,
   TechnologyLinkComponent
 } from './components';
 
@@ -30,6 +31,7 @@ import { routeConfig } from './portfolio.routes';
     TechnologyLinkComponent,
     SkillsComponent,
     AboutComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,

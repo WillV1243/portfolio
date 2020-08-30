@@ -19,6 +19,7 @@ export class PortfolioComponent implements AfterViewInit {
   @ViewChild('projects') private projects: ElementRef;
   @ViewChild('skills') private skills: ElementRef;
   @ViewChild('about') private about: ElementRef;
+  @ViewChild('contact') private contact: ElementRef;
 
   private elements: any = { };
 
@@ -29,7 +30,8 @@ export class PortfolioComponent implements AfterViewInit {
       top: this.top,
       projects: this.projects,
       skills: this.skills,
-      about: this.about
+      about: this.about,
+      contact: this.contact
     }
 
     this.loader.hideOnImageLoad();

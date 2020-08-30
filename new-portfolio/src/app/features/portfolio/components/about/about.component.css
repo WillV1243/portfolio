@@ -1,4 +1,4 @@
-/* landing */
+/* about */
 .about {
   width: 100%;
   max-width: 992px;
@@ -17,6 +17,18 @@
 .description-container p {
   margin-top: 1rem;
 }
+.description-container p a {
+  color: var(--color_secondary);
+  transition: color var(--animation_time) ease;
+}
+  .description-container p a:hover {
+    color: var(--color_active);
+    font-weight: 300;
+  }
+  .description-container p a:active {
+    color: var(--color_active);
+    font-weight: 300;
+  }
 
 /* Media queries */
 

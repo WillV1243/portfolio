@@ -1,5 +1,5 @@
-/* skills */
-.skills {
+/* contact */
+.contact {
   width: 100%;
   max-width: 992px;
   display: flex;
@@ -7,39 +7,17 @@
   align-items: flex-start;
   justify-content: center;
 }
-  .skills * + .skills * {
-    margin-top: 2rem;
-  }
 
 /* titles */
 .title {
-  margin-top: 2rem;
   font-weight: 100;
-}
-  .title:first-of-type {
-    margin: 0;
-  }
-  .title.medium {
-    font-size: 2rem;
-  }
-
-/* technologies */
-.technologies-container {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.technology {
-  min-width: 120px;
-  margin-top: 0.5rem;
 }
 
 /* Media queries */
 
 /* Small */
 @media only screen and (max-width: 688px) {
-  .skills {
+  .contact {
     padding: 0 0.5rem;
   }
 
@@ -50,19 +28,19 @@
 
 /* Large */
 @media only screen and (min-width: 688px) {
-  .skills {
+  .contact {
     padding: 0 1rem;
   }
 
   .title.large {
     font-size: 4rem;
   }
-}
 
+}
 
 /* larger */
 @media only screen and (min-width: calc(992px + 3rem)) {
-  .skills {
+  .contact {
     min-width: 992px;
   }
 }

@@ -53,11 +53,19 @@ section {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-/* projects */
+/* about */
 .about-container {
   background:
     linear-gradient(3deg, transparent 82%, var(--background) 82%),
     linear-gradient(-10deg, var(--background) 30%, var(--background_dark) 30%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+/* contact */
+.contact-container {
+  background:
+    linear-gradient(4deg, transparent 72%, var(--background_dark) 72%),
+    linear-gradient(-12deg, var(--background_dark) 36%, var(--background) 36%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
