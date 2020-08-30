@@ -7,6 +7,7 @@
     <input class="input"
       id="name"
       type="text"
+      placeholder="Your name here..."
       [formControl]="name"/>
     <div class="error-container">
       <p class="error" *ngIf="name.errors?.required && (name.touched || name.dirty)" @fade>
@@ -20,6 +21,7 @@
     <input class="input"
       id="company"
       type="text"
+      placeholder="Your company name here..."
       [formControl]="company"/>
     <div class="error-container">
       <p class="error" *ngIf="company.errors?.required && (company.touched || company.dirty)" @fade>
@@ -33,10 +35,14 @@
     <input class="input"
       id="email"
       type="email"
+      placeholder="Your email address here..."
       [formControl]="email"/>
     <div class="error-container">
       <p class="error" *ngIf="email.errors?.required && (email.touched || email.dirty)" @fade>
         Please enter your email
+      </p>
+      <p class="error" *ngIf="email.errors?.email && (email.touched || email.dirty)" @fade>
+        Please enter a valid email address
       </p>
     </div>
   </div>
@@ -45,6 +51,7 @@
     <label class="label" for="message">Message</label>
     <textarea class="textarea"
       id="message"
+      placeholder="Write your message here..."
       [formControl]="message">
     </textarea>
     <div class="error-container">

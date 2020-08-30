@@ -13,7 +13,8 @@ import {
   SkillsComponent,
   AboutComponent,
   ContactComponent,
-  TechnologyLinkComponent
+  TechnologyLinkComponent,
+  ContactFormComponent
 } from './components';
 
 // pages
@@ -21,7 +22,6 @@ import { PortfolioComponent } from './pages';
 
 // routes
 import { routeConfig } from './portfolio.routes';
-import { ContactFormComponent } from './components/contact-form/contact-form.component';
 /* --------------------------------------------------------------------------------- */
 
 @NgModule({
