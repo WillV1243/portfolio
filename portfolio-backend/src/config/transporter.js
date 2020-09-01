@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 
 // declarations
 dotenv.config();
+/* --------------------------------------------------------------------------------- */
 
 let transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -12,6 +13,5 @@ let transporter = nodemailer.createTransport({
     pass: process.env.PASSWORD
   }
 });
-/* --------------------------------------------------------------------------------- */
 
 module.exports = transporter;
