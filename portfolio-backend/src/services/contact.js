@@ -6,9 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 /* --------------------------------------------------------------------------------- */
 
-module.exports = async (reqBody) => {
-  let res;
-
+const handleContactFormResponse = async (reqBody) => {
   const mailOptions = {
     from: reqBody.email,
     to: process.env.EMAIL,
@@ -18,25 +16,36 @@ module.exports = async (reqBody) => {
 
   return transporter.sendMail(mailOptions)
     .then(mailRes => {
-      res = {
+      console.log('sendMail called', mailRes);
+      return {
         status: 200,
         success: true,
         message: 'Thanks for sending a message!',
         response: mailRes.response
       };
-      console.log('sendMail called', mailRes);
-      return res;
     })
     .catch(error => {
-      res = {
+      console.log('sendMail catch', error);
+      return {
         status: 500,
         success: false,
-        message: 'Something went wrong. Try again later',
+        message: 'Nodemailer failed. Try again later',
         error: error
       };
-      console.log('sendMail catch', error);
-      return res;
     });
 
 };
 
+const handleContactForm = async (req, res) => {
+  
+  handleContactFormResponse(req.body)
+    .then(handledRes => {
+      res.status(handledRes.status).send(handledRes);
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    })
+
+};
+
+module.exports = handleContactForm;
