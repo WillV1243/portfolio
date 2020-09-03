@@ -1,12 +1,38 @@
 // requirements
-const transporter = require('../config/transporter');
 const dotenv = require('dotenv');
+dotenv.config();
+
+// models
+const transporter = require('../config/transporter');
+const schemas = require('../models/schemas');
+const StripRequestHTML = require('../services/stripHTML');
 
 // declarations
-dotenv.config();
+const stripRequestHTML = new StripRequestHTML;
 /* --------------------------------------------------------------------------------- */
 
 class ContactFormService {
+
+  handleContactForm = async (req, res) => {
+    // strip request body of html + script
+    const strippedBody = stripRequestHTML.stripBodyOfHTML(req.body);
+
+    // schema for contact form request
+    const { error } = schemas.contactFormSchema.validate(strippedBody);
+    
+    // if schema returns error send 400
+    if (error) return res.status(400).send(error.details);
+    
+    // else handle request
+    this.handleContactFormResponse(strippedBody)
+      .then(handledRes => {
+        return res.status(handledRes.status).send(handledRes);
+      })
+      .catch(err => {
+        return res.status(500).send(err)
+      });
+  
+  };
 
   handleContactFormResponse = async (reqBody) => {
     const mailOptions = {
@@ -33,18 +59,6 @@ class ContactFormService {
           error: error
         };
       });
-  
-  };
-  
-  handleContactForm = async (req, res) => {
-    
-    this.handleContactFormResponse(req.body)
-      .then(handledRes => {
-        res.status(handledRes.status).send(handledRes);
-      })
-      .catch(err => {
-        res.status(500).send(err);
-      })
   
   };
 

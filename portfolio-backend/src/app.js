@@ -1,6 +1,7 @@
 // requirements
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -17,6 +18,7 @@ const corsOptions = {
 
 // app declarations
 app.use(express.json());
+app.use(helmet());
 app.use(cors(corsOptions));
 app.use('/api', router);
 /* --------------------------------------------------------------------------------- */

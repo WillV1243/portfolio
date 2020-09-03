@@ -1,6 +1,6 @@
 {
   "name": "portfolio-backend",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Backend for portfolio",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^4.1.0",
     "joi": "^17.2.1"
   },
   "devDependencies": {
