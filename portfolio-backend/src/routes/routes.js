@@ -2,10 +2,13 @@
 const router = require('express').Router();
 
 // services
-const handleContactForm = require('../services/contact');
+const ContactFormService = require('../services/contact');
+
+// declarations
+const contactFormService = new ContactFormService;
 /* --------------------------------------------------------------------------------- */
 
 // routes
-router.post('/ContactForm', handleContactForm);
+router.post('/ContactForm', contactFormService.handleContactForm);
 
 module.exports = router;
