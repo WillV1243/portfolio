@@ -5,8 +5,12 @@
   font-family: Raleway, sans-serif;
   font-size: 16px;
   --background: rgb(31, 33, 38);
-  --background_light: rgb(46, 49, 56);
   --background_dark: rgb(20, 21, 26);
+  --background_light: rgb(46, 49, 56);
+  --background_lighter: rgba(255, 255, 255, 0.1);
+  --background_lightest: rgba(255, 255, 255, 0.2);
+  --background_disabled: rgba(255, 255, 255, 0.05);
+  --shadow: rgba(0, 0, 0, 0.4);
   --color: rgb(223, 227, 235);
   --color_dark: rgb(156, 166, 183);
   --color_secondary: rgb(171, 201, 247);
@@ -47,10 +51,10 @@ a {
   background: var(--background_light);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--background_lighter);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--background_lightest);
 }
 
 /* global classes */

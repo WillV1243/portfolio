@@ -35,6 +35,7 @@ class ContactFormService {
   };
 
   handleContactFormResponse = async (reqBody) => {
+    // nodemailer options
     const mailOptions = {
       from: reqBody.email,
       to: process.env.EMAIL,
@@ -42,6 +43,7 @@ class ContactFormService {
       html: reqBody.message
     };
   
+    // nodemailer method to send mail
     return transporter.sendMail(mailOptions)
       .then(mailRes => {
         return {

@@ -37,7 +37,7 @@
   transition: all var(--animation_time) ease;
 }
   .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--background_lighter);
     color: var(--color_secondary);
   }
   .nav-link:active {
@@ -94,7 +94,7 @@
     height: 4rem;
     padding: 0;
     flex-direction: row;
-    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 0 16px var(--shadow);
   }
 
   .nav-logo {
@@ -113,13 +113,13 @@
     width: 4rem;
     height: 100vh;
     padding: 2rem 0 6rem 0;
-    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 -4px 16px var(--shadow);
   }
     .navbar:hover {
       width: 12rem;
     }
     .navbar:hover .nav-logo {
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--background_lighter);
     }
     .navbar:hover .link-text {
       display: block;

@@ -1,8 +1,8 @@
 /* project */
 .project {
   max-width: 992px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 4px 8px 32px rgba(0, 0, 0, 0.8);
+  background: var(--background_lighter);
+  box-shadow: 4px 8px 32px var(--shadow);
 }
 
 .header-container { grid-area: header }
