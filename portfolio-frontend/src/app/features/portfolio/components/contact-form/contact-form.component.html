@@ -65,6 +65,14 @@
   </div>
 
   <div class="input-container">
+    <re-captcha
+      (resolved)="recaptchaResolved($event)"
+      [formControl]="recaptcha"
+      [siteKey]="siteKey">
+    </re-captcha>
+  </div>
+
+  <div class="input-container">
     <button class="submit" type="submit" [disabled]="contactForm.invalid">Send Message</button>
   </div>
 

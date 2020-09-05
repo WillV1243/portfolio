@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 // modules
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 // features
 import { ComponentLibModule } from '../features/component-lib/component-lib.module';
@@ -15,12 +16,16 @@ import { ComponentLibModule } from '../features/component-lib/component-lib.modu
     CommonModule,
     ComponentLibModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   exports: [
     ComponentLibModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ]
 })
 export class SharedModule { }
