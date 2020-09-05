@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
+const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -20,6 +21,7 @@ const corsOptions = {
 app.use(express.json());
 app.use(helmet());
 app.use(cors(corsOptions));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', router);
 /* --------------------------------------------------------------------------------- */
 
