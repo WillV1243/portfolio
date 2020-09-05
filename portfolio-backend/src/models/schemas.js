@@ -9,4 +9,8 @@ const contactFormSchema = joi.object({
   message: joi.string().required().max(4000)
 })
 
-module.exports = { contactFormSchema };
+const recaptchaSchema = joi.object({
+  token: joi.string().required()
+})
+
+module.exports = { contactFormSchema, recaptchaSchema };

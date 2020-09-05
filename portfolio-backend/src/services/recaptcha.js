@@ -5,26 +5,24 @@ dotenv.config();
 
 // models
 const schemas = require('../models/schemas');
-const StripRequestHTML = require('../services/stripHTML');
-
-// declarations
-const stripRequestHTML = new StripRequestHTML;
 /* --------------------------------------------------------------------------------- */
 
 class RecaptchaService {
 
   handleRecaptcha = async (req, res) => {
+    console.log(req.body)
 
-    const token = req.body;
+    const token = req.body.token;
     const secretKey = process.env.SECRET_KEY;
+
+    if (!token) return res.status(400).send({ success: false, message: 'Recaptcha token empty' });
 
     const url =  `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}&remoteip=${req.connection.remoteAddress}`
     
-    if (!token) return res.status(400).send({ success: false, message: 'Recaptcha token empty' });
 
     axios.post(url)
       .then((response) => {
-        console.log({ response });
+        // console.log({ response. });
         return res.status(200).send({ success: true, message: 'Recaptcha passed' });
       })
       .catch((err) => {
