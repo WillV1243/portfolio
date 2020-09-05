@@ -9,80 +9,52 @@ const schemas = require('../models/schemas');
 
 class RecaptchaService {
 
+  recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.SECRET_KEY}`;
+
   handleRecaptcha = async (req, res) => {
-    console.log(req.body)
-
-    const token = req.body.token;
-    const secretKey = process.env.SECRET_KEY;
-
-    if (!token) return res.status(400).send({ success: false, message: 'Recaptcha token empty' });
-
-    const url =  `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}&remoteip=${req.connection.remoteAddress}`
-    
-
-    axios.post(url)
-      .then((response) => {
-        // console.log({ response. });
-        return res.status(200).send({ success: true, message: 'Recaptcha passed' });
-      })
-      .catch((err) => {
-        return res.status(400).send({ success: false, message: 'Recaptcha failed' });
-      })
-
-  }
-
-  /*
-  handleContactForm = async (req, res) => {
-    // strip request body of html + script
-    const strippedBody = stripRequestHTML.stripBodyOfHTML(req.body);
-
     // schema for contact form request
-    const { error } = schemas.contactFormSchema.validate(strippedBody);
-    
+    const { error } = schemas.recaptchaSchema.validate(req.body);
+
     // if schema returns error send 400
     if (error) return res.status(400).send(error.details);
-    
+
+    const token = req.body.token;
+    const url =  `${this.recaptchaUrl}&response=${token}&remoteip=${req.connection.remoteAddress}`;
+
     // else handle request
-    this.handleContactFormResponse(strippedBody)
+    this.handleRecaptchaResponse(url)
       .then(handledRes => {
         return res.status(handledRes.status).send(handledRes);
       })
       .catch(err => {
+        console.log('handleRecaptchResponse error:', err)
         return res.status(500).send(err)
       });
-  
-  };
 
-  handleContactFormResponse = async (reqBody) => {
-    // nodemailer options
-    const mailOptions = {
-      from: reqBody.email,
-      to: process.env.EMAIL,
-      subject: `[Mail sent from williamvandepeer.co.uk] ${reqBody.name} from ${reqBody.company}`,
-      html: reqBody.message
-    };
-  
-    // nodemailer method to send mail
-    return transporter.sendMail(mailOptions)
-      .then(mailRes => {
+  }
+
+  handleRecaptchaResponse = async (url) => {
+
+    return axios.post(url)
+      .then(res => {
         return {
           status: 200,
           success: true,
-          message: 'Thanks for sending a message!',
-          response: mailRes.response
+          message: 'Recaptcha successfull!',
+          response: res.data
         };
       })
-      .catch(error => {
+      .catch(err => {
         return {
-          status: 500,
+          status: 400,
           success: false,
-          message: 'Nodemailer failed to send message',
-          error: error
+          message: 'Recaptcha failed',
+          error: err
         };
-      });
-  
-  };
-*/
+      })
+
+  }
+
 }
 
 module.exports = RecaptchaService;

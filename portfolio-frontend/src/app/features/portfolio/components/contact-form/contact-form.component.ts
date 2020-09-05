@@ -9,6 +9,8 @@ import { ContactFormService } from '../../services';
 
 // animations
 import { fade } from 'src/app/shared/animations';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
@@ -26,7 +28,7 @@ export class ContactFormComponent implements OnInit {
     company: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     message: ['', [Validators.required, Validators.maxLength(4000)]],
-    recaptcha: ['', [Validators.required]]
+    recaptcha: [null, [Validators.required]]
   });
 
   public get name() { return this.contactForm.controls.name }
@@ -44,13 +46,24 @@ export class ContactFormComponent implements OnInit {
   }
 
   submitContactForm(formValue: any) {
-    console.log({ formValue });
-    this.contactFormService.postContactForm(formValue).subscribe();
+    const { recaptcha, ...form } = formValue;
+
+    this.contactFormService.postContactForm(form).subscribe();
   }
 
   recaptchaResolved(token: string) {
-    console.log({ token });
-    this.contactFormService.postRecaptcha({ token }).subscribe();
+    this.contactFormService.postRecaptcha({ token }).pipe(
+      catchError(error => {
+        this.recaptcha.patchValue(null);
+        this.recaptcha.updateValueAndValidity();
+        return throwError(error);
+      })
+    ).subscribe(res => {
+      if (res.success) {
+        this.recaptcha.patchValue(true);
+        this.recaptcha.updateValueAndValidity();
+      }
+    });
   }
 
 }

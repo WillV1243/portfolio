@@ -34,7 +34,6 @@ export class ContactFormService {
   public postRecaptcha(recaptcha: Recaptcha): Observable<any> {
     return this.http.post(`${this.apiUrl}ValidateRecaptcha`, recaptcha).pipe(
       map(res => {
-        console.log(res);
         return res;
       }),
       catchError(err => {
