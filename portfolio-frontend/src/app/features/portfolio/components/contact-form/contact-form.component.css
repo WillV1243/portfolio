@@ -44,6 +44,7 @@ input, textarea, button {
 .submit {
   width: 100%;
   padding: 0.5rem;
+  margin-top: 1.5rem;
   transition: all var(--animation_time) ease;
   cursor: pointer;
 }
@@ -62,7 +63,6 @@ input, textarea, button {
 /* labels */
 .label {
   margin-bottom: 0.5rem;
-  padding-left: 0.5rem;
 }
 
 /* errors */
@@ -74,6 +74,7 @@ input, textarea, button {
 }
 .error {
   position: absolute;
+  right: 0;
   font-size: 0.8rem;
   font-weight: 300;
   color: var(--color_warn);
