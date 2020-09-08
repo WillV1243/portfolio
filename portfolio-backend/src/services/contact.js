@@ -29,24 +29,35 @@ class ContactFormService {
     const token = strippedBody.recaptcha;
     const url =  `${this.recaptchaUrl}&response=${token}&remoteip=${req.connection.remoteAddress}`;
 
-    this.handleRecaptchaResponse(url)
-      .then(recaptchaRes => {
-        console.log({ recaptchaRes });
-        return res.status(200).send({ success: true })
-/*
-        if (recaptchaRes.success) {
-          return this.handleContactFormResponse(strippedBody)
-            .then(handledRes => {
-              return res.status(handledRes.status).send(handledRes);
-            })
-            .catch(err => {
-              return res.status(500).send(err)
-            });
-        }*/
+    axios.post(url)
+      .then(recaptchaRes => recaptchaRes.data)
+      .then(recaptchaData => {
+        const success = recaptchaData && recaptchaData.success;
+
+        if (success) {
+          return this.handleContactFormResponse(strippedBody);
+        } else {
+          throw({
+            status: 400,
+            success: false,
+            message: 'Recaptcha failed!',
+            error: recaptchaData
+          });
+        }
 
       })
-      .catch(err => {
-        return res.status(500).send(err)
+      .then(nodemailerRes => {
+        const success = nodemailerRes && nodemailerRes.success;
+
+        if (success) {
+          return res.status(nodemailerRes.status).send(nodemailerRes);
+        } else {
+          throw(nodemailerRes);
+        }
+
+      })
+      .catch(error => {
+        return res.status(error.status ? error.status : 500).send(error)
       });
   
   };
@@ -62,12 +73,12 @@ class ContactFormService {
   
     // nodemailer method to send mail
     return transporter.sendMail(mailOptions)
-      .then(mailRes => {
+      .then(res => {
         return {
           status: 200,
           success: true,
-          message: 'Thanks for sending a message!',
-          response: mailRes.response
+          message: 'Sending a message was successful!',
+          response: res.response
         };
       })
       .catch(error => {
@@ -79,50 +90,6 @@ class ContactFormService {
         };
       });
   
-  };
-
-  handleRecaptcha = async (req, res) => {
-    // schema for contact form request
-    const { error } = schemas.recaptchaSchema.validate(req.body);
-
-    // if schema returns error send 400
-    if (error) return res.status(400).send(error.details);
-
-    const token = req.body.token;
-    const url =  `${this.recaptchaUrl}&response=${token}&remoteip=${req.connection.remoteAddress}`;
-
-    // else handle request
-    this.handleRecaptchaResponse(url)
-      .then(handledRes => {
-        return res.status(handledRes.status).send(handledRes);
-      })
-      .catch(err => {
-        console.log('handleRecaptchResponse error:', err)
-        return res.status(500).send(err)
-      });
-
-  };
-
-  handleRecaptchaResponse = async (url) => {
-
-    return axios.post(url)
-      .then(res => {
-        return {
-          status: 200,
-          success: true,
-          message: 'Recaptcha successfull!',
-          response: res.data
-        };
-      })
-      .catch(err => {
-        return {
-          status: 400,
-          success: false,
-          message: 'Recaptcha failed',
-          error: err
-        };
-      })
-
   };
 
 }

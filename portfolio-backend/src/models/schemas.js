@@ -7,7 +7,7 @@ const contactFormSchema = joi.object({
   company: joi.string().required(),
   email: joi.string().required().email(),
   message: joi.string().required().max(4000),
-  recaptcha: joi.string.required()
+  recaptcha: joi.string().required()
 })
 
 module.exports = { contactFormSchema };

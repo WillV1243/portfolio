@@ -46,24 +46,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   submitContactForm(formValue: any) {
-    const { recaptcha, ...form } = formValue;
-
-    this.contactFormService.postContactForm(form).subscribe();
-  }
-
-  recaptchaResolved(token: string) {
-    this.contactFormService.postRecaptcha({ token }).pipe(
-      catchError(error => {
-        this.recaptcha.patchValue(null);
-        this.recaptcha.updateValueAndValidity();
-        return throwError(error);
-      })
-    ).subscribe(res => {
-      if (res.success) {
-        this.recaptcha.patchValue(true);
-        this.recaptcha.updateValueAndValidity();
-      }
-    });
+    this.contactFormService.postContactForm(formValue).subscribe();
   }
 
 }
