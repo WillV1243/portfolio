@@ -1,6 +1,6 @@
 {
   "name": "portfolio-backend",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Backend for portfolio",
   "main": "index.js",
   "scripts": {

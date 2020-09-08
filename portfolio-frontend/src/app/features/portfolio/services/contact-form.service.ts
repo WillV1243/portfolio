@@ -7,7 +7,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 // models
-import { ContactForm, Recaptcha } from '../models';
+import { ContactForm } from '../models';
 /* --------------------------------------------------------------------------------- */
 
 @Injectable({
@@ -23,17 +23,6 @@ export class ContactFormService {
     return this.http.post(`${this.apiUrl}ContactForm`, formValue).pipe(
       map(res => {
         console.log(res);
-        return res;
-      }),
-      catchError(err => {
-        return throwError(err);
-      })
-    )
-  }
-
-  public postRecaptcha(recaptcha: Recaptcha): Observable<any> {
-    return this.http.post(`${this.apiUrl}ValidateRecaptcha`, recaptcha).pipe(
-      map(res => {
         return res;
       }),
       catchError(err => {

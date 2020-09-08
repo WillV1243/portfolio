@@ -3,4 +3,5 @@ export interface ContactForm {
   company: string;
   email: string;
   message: string;
+  recaptcha: string;
 }
