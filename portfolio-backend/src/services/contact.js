@@ -1,5 +1,5 @@
 // requirements
-const axios = require('axios');
+const axios = require('axios').default
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -33,16 +33,17 @@ class ContactFormService {
       .then(recaptchaRes => recaptchaRes.data)
       .then(recaptchaData => {
         const success = recaptchaData && recaptchaData.success;
+        const error = {
+          status: 400,
+          success: false,
+          message: 'Recaptcha failed!',
+          error: recaptchaData
+        }
 
         if (success) {
           return this.handleContactFormResponse(strippedBody);
         } else {
-          throw({
-            status: 400,
-            success: false,
-            message: 'Recaptcha failed!',
-            error: recaptchaData
-          });
+          throw(error);
         }
 
       })
