@@ -7,7 +7,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 // models
-import { ContactForm, ContactFormState, isInstanceOfContactFormState, contactStateProperyCheck } from '../models';
+import { ContactForm, ContactFormState, isInstanceOfContactFormState } from '../models';
 /* --------------------------------------------------------------------------------- */
 
 @Injectable({
@@ -56,25 +56,9 @@ export class ContactFormService {
 
   // Change whole state
   public setContactState(value: ContactFormState) {
-    if (!isInstanceOfContactFormState(value)) {
-      throw({ message: `setContactState "value" !== ContactFormState`, value });
-    }
+    if (!isInstanceOfContactFormState(value)) throw({ message: `setContactState 'value' !== ContactFormState`, value });
 
     this.contactState = value;
-  }
-  // Change state property
-  public setContactStateProperty(propertyName: string, value: any) {
-    if (!contactStateProperyCheck(propertyName)) {
-      throw({ message: `setContactStateProperty "propertyName" !== a property name of ContactFormState`, propertyName });
-    }
-
-    const previousState: ContactFormState = this.contactState;
-    const newState: ContactFormState = {
-      ...previousState,
-      [propertyName]: value
-    }
-
-    this.contactState = newState;
   }
   /* ------------------------------------------------ */
 
