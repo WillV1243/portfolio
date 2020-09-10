@@ -1,5 +1,8 @@
 // angular
 import { Component, OnInit } from '@angular/core';
+
+// rxjs
+import { Observable } from 'rxjs';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
@@ -9,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  public formComplete$: Observable<boolean>;
+  public formFailed$: Observable<boolean>;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public resetForm() {
+
   }
 
 }
