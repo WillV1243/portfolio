@@ -11,8 +11,8 @@ import { ContactFormService } from '../../services';
 import { fade } from 'src/app/shared/animations';
 
 // rxjs
-import { catchError } from 'rxjs/operators';
-import { throwError, Observable } from 'rxjs';
+import { catchError, takeUntil } from 'rxjs/operators';
+import { throwError, Observable, Subject } from 'rxjs';
 
 // models
 import { ContactFormState } from '../../models';
@@ -26,11 +26,13 @@ import { ContactFormState } from '../../models';
 })
 export class ContactFormComponent implements OnInit {
 
+  private unsubscriber: Subject<any> = new Subject<any>();
+
   public siteKey = '6LeiD8gZAAAAAO_rSKkALGYiu__G3kPfo1WSsj6R';
 
   public loading$: Observable<boolean> = this.contactFormService.getContactLoading$;
   public loaded$: Observable<boolean> = this.contactFormService.getContactLoaded$;
-  public error$: Observable<boolean> = this.contactFormService.getContactError$;
+  public error$: Observable<any> = this.contactFormService.getContactError$;
 
   public contactForm = this.fb.group({
     name: ['', Validators.required],

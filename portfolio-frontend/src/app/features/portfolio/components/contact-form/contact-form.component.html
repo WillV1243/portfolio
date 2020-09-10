@@ -66,13 +66,19 @@
 
   <div class="input-container">
     <re-captcha
+      theme="dark"
       [siteKey]="siteKey"
       [formControl]="recaptcha">
     </re-captcha>
   </div>
 
   <div class="input-container">
-    <button class="submit" type="submit" [disabled]="contactForm.invalid">Send Message</button>
+    <button class="submit" type="submit" [disabled]="contactForm.invalid || (loading$ | async)">Send Message</button>
+    <div class="error-container">
+      <p class="error" *ngIf="error$ | async" @fade>
+        {{ (error$ | async).error.message }}
+      </p>
+    </div>
   </div>
 
 </form>
