@@ -9,8 +9,13 @@ import { ContactFormService } from '../../services';
 
 // animations
 import { fade } from 'src/app/shared/animations';
+
+// rxjs
 import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
+
+// models
+import { ContactFormState } from '../../models';
 /* --------------------------------------------------------------------------------- */
 
 @Component({
@@ -22,6 +27,10 @@ import { throwError } from 'rxjs';
 export class ContactFormComponent implements OnInit {
 
   public siteKey = '6LeiD8gZAAAAAO_rSKkALGYiu__G3kPfo1WSsj6R';
+
+  public loading$: Observable<boolean> = this.contactFormService.getContactLoading$;
+  public loaded$: Observable<boolean> = this.contactFormService.getContactLoaded$;
+  public error$: Observable<boolean> = this.contactFormService.getContactError$;
 
   public contactForm = this.fb.group({
     name: ['', Validators.required],
@@ -46,7 +55,35 @@ export class ContactFormComponent implements OnInit {
   }
 
   submitContactForm(formValue: any) {
-    this.contactFormService.postContactForm(formValue).subscribe();
+    let state: ContactFormState = {
+      loading: true,
+      loaded: false,
+      response: null,
+      error: null
+    };
+
+    this.contactFormService.setContactState(state);
+
+    this.contactFormService.postContactForm(formValue).pipe(
+      catchError(error => {
+        state = {
+          loading: false,
+          loaded: true,
+          response: null,
+          error
+        }
+        this.contactFormService.setContactState(state);
+        return throwError(error);
+      })
+    ).subscribe(response => {
+      state = {
+        loading: false,
+        loaded: true,
+        response,
+        error: null
+      }
+      this.contactFormService.setContactState(state);
+    });
   }
 
 }

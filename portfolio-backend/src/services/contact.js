@@ -26,9 +26,11 @@ class ContactFormService {
     // if schema returns error send 400
     if (error) return res.status(400).send(error.details);
 
+    // recaptcha token + url for recaptch verify
     const token = strippedBody.recaptcha;
     const url =  `${this.recaptchaUrl}&response=${token}&remoteip=${req.connection.remoteAddress}`;
 
+    // promise chain: axios recaptcha verify -> nodemailer send email -> send response to client
     axios.post(url)
       .then(recaptchaRes => recaptchaRes.data)
       .then(recaptchaData => {
@@ -45,7 +47,6 @@ class ContactFormService {
         } else {
           throw(error);
         }
-
       })
       .then(nodemailerRes => {
         const success = nodemailerRes && nodemailerRes.success;
@@ -55,7 +56,6 @@ class ContactFormService {
         } else {
           throw(nodemailerRes);
         }
-
       })
       .catch(error => {
         return res.status(error.status ? error.status : 500).send(error)
