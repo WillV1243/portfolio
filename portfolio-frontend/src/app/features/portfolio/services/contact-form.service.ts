@@ -15,15 +15,18 @@ import { ContactForm, ContactFormState, isInstanceOfContactFormState } from '../
 })
 export class ContactFormService {
 
-  private apiUrl = '/api/';
+  private apiUrl: string = '/api/';
 
-  // Contact form state
-  private ContactState = new BehaviorSubject<ContactFormState>({
+  private initialState: ContactFormState = {
     loading: false,
     loaded: true,
+    formSubmitted: false,
     response: null,
     error: null
-  });
+  };
+
+  // Contact form state
+  private ContactState = new BehaviorSubject<ContactFormState>({ ...this.initialState });
 
   // Get current state value
   private get contactState() {
@@ -31,13 +34,15 @@ export class ContactFormService {
   }
   // Change state
   private set contactState(state: ContactFormState) {
-    console.log(state);
     this.ContactState.next({ ...state });
+    console.log('%c State change:', 'color: red', state);
   }
 
   // State property observables
   public getContactLoading$: Observable<boolean> = this.getContactProperty('loading');
   public getContactLoaded$: Observable<boolean> = this.getContactProperty('loaded');
+  public getFormSubmitted$: Observable<boolean> = this.getContactProperty('formSubmitted');
+  public getContactResponse$: Observable<any> = this.getContactProperty('response');
   public getContactError$: Observable<any> = this.getContactProperty('error');
 
   constructor(private http: HttpClient) { }
@@ -59,6 +64,11 @@ export class ContactFormService {
     if (!isInstanceOfContactFormState(value)) throw({ message: `setContactState 'value' !== ContactFormState`, value });
 
     this.contactState = value;
+  }
+
+  // Reset state
+  public resetContactState() {
+    this.contactState = this.initialState;
   }
   /* ------------------------------------------------ */
 

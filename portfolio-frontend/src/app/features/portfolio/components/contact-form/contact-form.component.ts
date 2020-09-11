@@ -11,8 +11,8 @@ import { ContactFormService } from '../../services';
 import { fade } from 'src/app/shared/animations';
 
 // rxjs
-import { catchError, takeUntil } from 'rxjs/operators';
-import { throwError, Observable, Subject } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { throwError, Observable } from 'rxjs';
 
 // models
 import { ContactFormState } from '../../models';
@@ -24,9 +24,7 @@ import { ContactFormState } from '../../models';
   styleUrls: ['./contact-form.component.css'],
   animations: [fade]
 })
-export class ContactFormComponent implements OnInit {
-
-  private unsubscriber: Subject<any> = new Subject<any>();
+export class ContactFormComponent {
 
   public siteKey = '6LeiD8gZAAAAAO_rSKkALGYiu__G3kPfo1WSsj6R';
 
@@ -53,17 +51,14 @@ export class ContactFormComponent implements OnInit {
     private contactFormService: ContactFormService
   ) { }
 
-  ngOnInit() {
-  }
-
   submitContactForm(formValue: any) {
     let state: ContactFormState = {
       loading: true,
       loaded: false,
+      formSubmitted: false,
       response: null,
       error: null
     };
-
     this.contactFormService.setContactState(state);
 
     this.contactFormService.postContactForm(formValue).pipe(
@@ -71,6 +66,7 @@ export class ContactFormComponent implements OnInit {
         state = {
           loading: false,
           loaded: true,
+          formSubmitted: true,
           response: null,
           error
         }
@@ -81,6 +77,7 @@ export class ContactFormComponent implements OnInit {
       state = {
         loading: false,
         loaded: true,
+        formSubmitted: true,
         response,
         error: null
       }

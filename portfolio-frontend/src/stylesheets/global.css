@@ -14,8 +14,8 @@
   --color: rgb(223, 227, 235);
   --color_dark: rgb(156, 166, 183);
   --color_secondary: rgb(171, 201, 247);
-  --color_tertiary: rgb(143, 225, 177);
   --color_active: rgb(255, 255, 255);
+  --color_confirm: rgb(143, 225, 177);
   --color_warn: rgb(247, 171, 171);
   --animation_time: 300ms;
 }

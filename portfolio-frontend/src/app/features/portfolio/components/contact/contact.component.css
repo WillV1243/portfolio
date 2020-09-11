@@ -15,8 +15,50 @@
 
 .form-container {
   width: 100%;
-  margin-bottom: 3rem;
 }
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+  margin: 0 auto;
+}
+  .icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  .icon.confirm svg {
+    color: var(--color_confirm);
+  }
+  .icon.error svg {
+    color: var(--color_warn);
+  }
+
+/* button */
+.button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--color);
+  background: var(--background_lighter);
+  transition: all var(--animation_time) ease;
+  cursor: pointer;
+}
+  .button:hover {
+    color: var(--color_secondary);
+  }
+  .button:active {
+    color: var(--color_active);
+  }
+  .button:disabled, .button:disabled:hover, .button:disabled:active {
+    background: var(--background_disabled);
+    color: var(--color_dark);
+    cursor: default;
+  }
 
 /* Media queries */
 
@@ -30,6 +72,9 @@
   .title.large {
     font-size: 3rem;
   }
+  .title.medium {
+    font-size: 2rem;
+  }
 }
 
 /* Large */
@@ -40,6 +85,9 @@
 
   .title.large {
     font-size: 4rem;
+  }
+  .title.medium {
+    font-size: 3rem;
   }
 
 }

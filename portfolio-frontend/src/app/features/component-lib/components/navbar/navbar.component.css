@@ -71,8 +71,8 @@
   justify-content: center;
 }
 .version {
-  padding: 0.2rem;
-  font-size: 0.8rem;
+  padding: 0.25rem;
+  font-size: 0.75rem;
   font-weight: 300;
   color: var(--color_dark);
   user-select: none;

@@ -9,6 +9,7 @@ export interface ContactForm {
 export interface ContactFormState {
   loading: boolean;
   loaded: boolean;
+  formSubmitted: boolean;
   response: any;
   error: any;
 }
@@ -17,6 +18,6 @@ export interface ContactFormState {
 export const isInstanceOfContactFormState = (object: any): object is ContactFormState => {
   if (!object || object === null || object === undefined) return;
 
-  return 'loading' in object && 'loaded' in object && 'response' in object && 'error' in object;
+  return 'loading' in object && 'loaded' in object && 'formSubmitted' in object && 'response' in object && 'error' in object;
 }
 

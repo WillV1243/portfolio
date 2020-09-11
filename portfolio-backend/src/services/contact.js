@@ -66,10 +66,20 @@ class ContactFormService {
   handleContactFormResponse = async (reqBody) => {
     // nodemailer options
     const mailOptions = {
-      from: reqBody.email,
+      from: {
+        name: reqBody.name,
+        address: reqBody.email
+      },
       to: process.env.EMAIL,
-      subject: `[Mail sent from williamvandepeer.co.uk] ${reqBody.name} from ${reqBody.company}`,
-      html: reqBody.message
+      subject: `[Mail sent from williamvandepeer.co.uk] from ${reqBody.name}`,
+      html: `
+        <div>
+          <h3><b>Sender:</b> ${reqBody.name}</h3>
+          <h3><b>company:</b> ${reqBody.company}</h3>
+          <h3><b>email:</b> ${reqBody.email}</h3>
+          <p>${reqBody.message}</p>
+        </div>
+      `
     };
   
     // nodemailer method to send mail
