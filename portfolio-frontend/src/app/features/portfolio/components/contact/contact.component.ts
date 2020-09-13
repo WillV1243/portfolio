@@ -20,8 +20,8 @@ import { fade } from 'src/app/shared/animations';
 })
 export class ContactComponent implements OnInit {
 
-  public formComplete$: Observable<boolean> = this.contactFormService.getContactResponse$;
-  public formFailed$: Observable<boolean> = this.contactFormService.getContactError$;
+  public formSuccessful$: Observable<boolean> = this.contactFormService.getContactResponse$;
+  public formFailed$: Observable<any> = this.contactFormService.getContactError$;
 
   public formInProgress$: Observable<boolean> = this.contactFormService.getFormSubmitted$.pipe(
     map(formSubmitted => !formSubmitted)

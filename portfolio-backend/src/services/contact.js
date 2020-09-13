@@ -48,7 +48,7 @@ class ContactFormService {
           throw(error);
         }
       })
-      .then(nodemailerRes => {
+      .then(nodemailerRes => {        
         const success = nodemailerRes && nodemailerRes.success;
 
         if (success) {
