@@ -75,6 +75,11 @@ section {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+/* contact */
+.footer-container {
+  background: var(--background_dark);
+  height: auto;
+}
 
 /* Media queries */
 
@@ -88,6 +93,9 @@ section {
   section {
     min-height: calc(100vh - 4rem);
   }
+    section.footer-container {
+      min-height: auto;
+    }
 
   .projects-container {
     padding: 1rem 0;
@@ -109,6 +117,9 @@ section {
   section {
     min-height: 100vh;
   }
+    section.footer-container {
+      min-height: auto;
+    }
 
   .projects-container {
     padding: 3rem 0;

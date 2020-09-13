@@ -1,0 +1,48 @@
+/* landing */
+.footer {
+  width: 100%;
+  margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* logo */
+.logo {
+  width: 4rem;
+  height: 100%;
+}
+
+/* titles */
+.text {
+  font-weight: 100;
+  color: var(--color);
+}
+  .text + .text {
+    margin-top: 1rem;
+  }
+  .text.small {
+    font-size: 0.75rem;
+    color: var(--color_dark);
+    font-weight: 300;
+  }
+
+/* Media queries */
+
+/* Small */
+@media only screen and (max-width: 688px) {
+  .footer {
+    padding: 0 0.5rem;
+  }
+
+}
+
+/* Large */
+@media only screen and (min-width: 688px) {
+  .footer {
+    padding: 0 1rem;
+  }
+
+}
+

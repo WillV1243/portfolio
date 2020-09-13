@@ -5,3 +5,4 @@ export * from './about/about.component';
 export * from './contact/contact.component';
 export * from './technology-link/technology-link.component';
 export * from './contact-form/contact-form.component';
+export * from './footer/footer.component';

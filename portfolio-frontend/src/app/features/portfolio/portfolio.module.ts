@@ -14,7 +14,8 @@ import {
   AboutComponent,
   ContactComponent,
   TechnologyLinkComponent,
-  ContactFormComponent
+  ContactFormComponent,
+  FooterComponent
 } from './components';
 
 // pages
@@ -33,7 +34,8 @@ import { routeConfig } from './portfolio.routes';
     SkillsComponent,
     AboutComponent,
     ContactComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
