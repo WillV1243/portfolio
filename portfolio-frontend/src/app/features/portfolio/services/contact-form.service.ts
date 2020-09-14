@@ -8,6 +8,9 @@ import { map } from 'rxjs/operators';
 
 // models
 import { ContactForm, ContactFormState, isInstanceOfContactFormState } from '../models';
+
+// services
+import { AppInitService } from 'src/app/core/services';
 /* --------------------------------------------------------------------------------- */
 
 @Injectable({
@@ -15,7 +18,7 @@ import { ContactForm, ContactFormState, isInstanceOfContactFormState } from '../
 })
 export class ContactFormService {
 
-  private apiUrl: string = '/api/';
+  private apiUrl: string = this.appInitService.appConfig.apiUrl;
 
   private initialState: ContactFormState = {
     loading: false,
@@ -45,7 +48,10 @@ export class ContactFormService {
   public getContactResponse$: Observable<any> = this.getContactProperty('response');
   public getContactError$: Observable<any> = this.getContactProperty('error');
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private appInitService: AppInitService
+  ) { }
 
   /* --------------- STATE MANAGEMENT --------------- */
   // Get entire state

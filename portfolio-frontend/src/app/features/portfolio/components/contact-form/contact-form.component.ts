@@ -1,11 +1,12 @@
 // angular
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 // reactive forms
 import { FormBuilder, Validators } from '@angular/forms';
 
 // services
 import { ContactFormService } from '../../services';
+import { AppInitService } from 'src/app/core/services';
 
 // animations
 import { fade } from 'src/app/shared/animations';
@@ -26,7 +27,7 @@ import { ContactFormState } from '../../models';
 })
 export class ContactFormComponent {
 
-  public siteKey = '6LeiD8gZAAAAAO_rSKkALGYiu__G3kPfo1WSsj6R';
+  public siteKey = this.appInitService.appConfig.recaptchaSiteKey;
 
   public loading$: Observable<boolean> = this.contactFormService.getContactLoading$;
   public loaded$: Observable<boolean> = this.contactFormService.getContactLoaded$;
@@ -48,7 +49,8 @@ export class ContactFormComponent {
 
   constructor(
     private fb: FormBuilder,
-    private contactFormService: ContactFormService
+    private contactFormService: ContactFormService,
+    private appInitService: AppInitService
   ) { }
 
   submitContactForm(formValue: any) {
