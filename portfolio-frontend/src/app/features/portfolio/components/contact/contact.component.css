@@ -16,6 +16,18 @@
   .title.small {
     text-align: center;
   }
+  .title.small a {
+    color: var(--color_secondary);
+    transition: color var(--animation_time) ease;
+  }
+    .title.small a:hover {
+      color: var(--color_active);
+      font-weight: 300;
+    }
+    .title.small a:active {
+      color: var(--color_active);
+      font-weight: 300;
+    }
 
 .form-container {
   width: 100%;
@@ -47,10 +59,12 @@
 
 /* button */
 .button {
+  display: block;
   width: 100%;
   padding: 0.5rem;
   margin-top: 1.5rem;
   border: 1px solid transparent;
+  text-align: center;
   font-family: inherit;
   font-weight: 300;
   font-size: 1rem;

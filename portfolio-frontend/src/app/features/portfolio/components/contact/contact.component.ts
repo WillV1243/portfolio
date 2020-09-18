@@ -27,6 +27,8 @@ export class ContactComponent implements OnInit {
     map(formSubmitted => !formSubmitted)
   );
 
+  public inProgress = true;
+
   constructor(private contactFormService: ContactFormService) { }
 
   ngOnInit(): void {
